@@ -2,69 +2,300 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
 }
 
 .container {
-  display: block;
   width: 100%;
-  height: 100vh;
-  background-color: #292929;
+  height: 100%;
+  background-color: #282c34;
 }
 
 .header_container {
+  position: sticky;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 7vh;
-  background-color: #000;
+  background-color: #20232a;
+  z-index: 10;
 }
-
-.navbar {
+.header_container .navbar {
   display: flex;
   align-items: center;
   width: 100%;
   height: 100%;
 }
-.navbar .list_nav {
+.header_container .navbar .nav-hamburguer {
+  display: none;
+  height: 100%;
+}
+@media (max-width: 768px) {
+  .header_container .navbar .nav-hamburguer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.header_container .navbar .nav-hamburguer img {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  padding: 7px;
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+}
+.header_container .navbar .nav-hamburguer .menu_mobile {
+  position: fixed;
+  padding: 10vh 1vh;
+  top: 0;
+  left: 0px;
+  width: 50%;
+  height: 100%;
+  background-color: #20232a;
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transform: translateX(-100%);
+  z-index: 10;
+}
+.header_container .navbar .nav-hamburguer .menu_mobile.active {
+  opacity: 1 !important;
+  visibility: visible;
+  transform: translateX(0%);
+}
+.header_container .navbar .nav-hamburguer .menu_mobile .mobile_nav {
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  gap: 1vh;
+  width: 100%;
+  height: auto;
+}
+.header_container .navbar .nav-hamburguer .menu_mobile .mobile_nav.active {
+  opacity: 1 !important;
+  visibility: visible;
+}
+.header_container .navbar .nav-hamburguer .menu_mobile .mobile_nav .nav_link {
+  display: flex;
+  opacity: 1;
+  flex-direction: column;
+  background-color: #4d4d4d;
+  width: 100%;
+  border-radius: 8px;
+  transition: 0.3s ease-in-out;
+}
+.header_container .navbar .nav-hamburguer .menu_mobile .mobile_nav .nav_link:hover {
+  background-color: #21a1f1;
+}
+.header_container .navbar .nav-hamburguer .menu_mobile .mobile_nav .nav_link a {
+  color: #ffffff;
+  padding: 1vh;
+  width: 100%;
+  height: 100%;
+}
+.header_container .navbar .list_nav {
   display: flex;
   width: 100%;
   height: 100%;
   align-items: center;
   flex-wrap: wrap;
 }
-.navbar .list_nav .nav_link {
+@media (max-width: 768px) {
+  .header_container .navbar .list_nav {
+    display: none;
+  }
+}
+.header_container .navbar .list_nav .nav_link {
   margin: 0 20px 0 20px;
   display: flex;
   justify-content: space-around;
 }
-.navbar .list_nav .nav_link a {
+.header_container .navbar .list_nav .nav_link a {
   text-decoration: none;
   color: #fff;
   transition: 0.3s;
 }
-.navbar .list_nav .nav_link a:hover {
-  color: #ff3939;
+.header_container .navbar .list_nav .nav_link a:hover {
+  color: #65ceff;
 }
-
-.logo_icon {
+.header_container .logo_icon {
   display: flex;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   height: 100%;
 }
-
-.profile_icon {
+@media (max-width: 768px) {
+  .header_container .logo_icon {
+    display: none;
+  }
+}
+.header_container .profile_icon {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   display: flex;
   align-items: center;
   height: 100%;
-  margin-left: 30%;
+  margin: 0 1vh 0 30%;
 }
-.profile_icon .circle_profile {
+.header_container .profile_icon .circle_profile {
   display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100%;
 }
-.profile_icon .circle_profile img {
-  padding: 8px;
+.header_container .profile_icon .circle_profile img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 100%;
+}
+
+.new-releases {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  padding: 10vh;
+}
+@media (max-width: 1024px) {
+  .new-releases {
+    padding: 2vh;
+  }
+}
+@media (max-width: 768px) {
+  .new-releases {
+    padding: 2vh;
+  }
+}
+.new-releases .catalog {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  padding: 20px;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .new-releases .catalog {
+    padding: 0;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.new-releases .catalog .card-horizontal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  background-color: #797b7c;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 8px;
   cursor: pointer;
+}
+.new-releases .catalog .card-horizontal .img_movie {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+.new-releases .catalog .card-horizontal .img_movie:hover .overlay {
+  opacity: 1;
+  transform: translateX(0%);
+}
+.new-releases .catalog .card-horizontal .img_movie .anime_movie {
+  border-radius: 8px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.new-releases .catalog .card-horizontal .img_movie .overlay {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3215686275);
+  box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.1647058824);
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 0.3s, transform 0.3s;
+  border-radius: 8px;
+  z-index: 1;
+}
+@media (max-width: 1024px) {
+  .new-releases .catalog .card-horizontal .img_movie .overlay {
+    padding: 0px;
+  }
+}
+.new-releases .catalog .card-horizontal .img_movie .overlay .logo_anime_img {
+  width: 100%;
+  height: 15px;
+}
+@media (max-width: 1024px) {
+  .new-releases .catalog .card-horizontal .img_movie .overlay .logo_anime_img {
+    display: none;
+  }
+}
+.new-releases .catalog .card-horizontal .img_movie .overlay .logo_anime_img img {
+  width: 30px;
+}
+.new-releases .catalog .card-horizontal .img_movie .overlay .description_anime_img {
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+}
+.new-releases .catalog .card-horizontal .img_movie .overlay .description_anime_img .description {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: flex-start;
+  z-index: 1;
+}
+.new-releases .catalog .card-horizontal .img_movie .overlay .description_anime_img .description .infos {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  font-weight: 500;
+  font-size: 1em;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+@media (max-width: 1024px) {
+  .new-releases .catalog .card-horizontal .img_movie .overlay .description_anime_img .description .infos {
+    padding: 0px;
+  }
+}
+.new-releases .arrows_navigation {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
 }/*# sourceMappingURL=style.css.map */
