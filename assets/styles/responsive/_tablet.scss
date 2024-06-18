@@ -1,0 +1,22 @@
+@include breakpoint(medium, "max") {
+    .header_container {
+        .logo_icon {
+            display: none;
+        }
+    }
+    .new-releases {
+        padding: 2vh;
+        .catalog {
+            padding: 0;
+            grid-template-columns: repeat(2, 1fr);
+            .card-horizontal {
+                height: auto;
+                .img_movie {
+                    .overlay {
+                        padding: 2px;
+                    }
+                }
+            }
+        }
+    }
+}

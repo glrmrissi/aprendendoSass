@@ -1,0 +1,18 @@
+@mixin breakpoint($name, $direction: 'min') {
+ $value: map-get($breakpoints, $name);
+
+
+ @if $value {
+    @if $direction == 'max' {
+      @media (max-width: $value) {
+        @content;
+      }
+    } @else {
+      @media (min-width: $value) {
+        @content;
+      }
+    }
+  } @else {
+    @warn "No breakpoint found for #{$name}";
+  }
+}

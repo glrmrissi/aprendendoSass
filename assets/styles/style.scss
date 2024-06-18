@@ -1,0 +1,30 @@
+// Variáveis e mixins
+@import "utils/variables";
+@import "utils/mixins";
+
+// Media Queries
+@import "responsive/callmediaqueries";
+
+// Base
+@import "base/reset";
+@import "base/typografy";
+
+// Componentes
+@import "components/buttons";
+@import "components/cards";
+
+// Layout
+@import "layout/header";
+@import "layout/footer";
+
+// Páginas
+@import "pages/mainpage";
+
+// Temas
+@import "themes/theme";
+
+// Responsive
+
+@import "responsive/desktop";
+@import "responsive/mobile";
+@import "responsive/tablet";
