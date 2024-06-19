@@ -1,11 +1,11 @@
 @include breakpoint(large, "max") {
     .new-releases {
-        padding: 2vh;
+        padding: 1vh;
         .catalog {
-            padding: 0;
+            padding: 0vh;
             grid-template-columns: repeat(2, 1fr);
             .card-horizontal {
-                height: auto;
+                height: 250px;
                 .img_movie {
                     .overlay {
                         padding: 0vh;
