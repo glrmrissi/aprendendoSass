@@ -1,0 +1,53 @@
+.see_more {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+    z-index: 1;
+    .button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $font-color-main;
+      margin: 1vh 0;
+      padding: 0 1vh;
+      width: 10vh;
+      height: 4vh;
+      background-color: $button-color;
+      border-radius: 8px;
+      cursor: pointer;
+      position: relative; 
+      overflow: hidden; 
+      transition: background-position 0.3s;
+      &:hover {
+        background-position: 0 100%;
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: 0;
+        width: 150%;
+        height: 200%;
+        background: linear-gradient(
+          to bottom,
+          $button-hover 50%,
+          $button-hover 50%
+        );
+        transition: transform 0.3s;
+        transform-origin: top left;
+        transform: translateY(-100%);
+        rotate: 20deg;
+      }
+
+      &:hover:after {
+        width: 100%;
+        transform: translateX(-50%);
+        rotate: 40deg;
+      }
+      h5 {
+        z-index: 2;
+      }
+    }
+  }

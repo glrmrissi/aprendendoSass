@@ -1,3 +1,7 @@
+.no-scroll {
+  overflow: hidden;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,6 +13,55 @@ body {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-style: normal;
+}
+
+.see_more {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+  z-index: 1;
+}
+.see_more .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  margin: 1vh 0;
+  padding: 0 1vh;
+  width: 10vh;
+  height: 4vh;
+  background-color: #4d4d4d;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: background-position 0.3s;
+}
+.see_more .button:hover {
+  background-position: 0 100%;
+}
+.see_more .button:after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 150%;
+  height: 200%;
+  background: linear-gradient(to bottom, #21a1f1 50%, #21a1f1 50%);
+  transition: transform 0.3s;
+  transform-origin: top left;
+  transform: translateY(-100%);
+  rotate: 20deg;
+}
+.see_more .button:hover:after {
+  width: 100%;
+  transform: translateX(-50%);
+  rotate: 40deg;
+}
+.see_more .button h5 {
+  z-index: 2;
 }
 
 .header_container {
@@ -82,6 +135,7 @@ body {
 .header_container .navbar .nav-hamburguer .menu_mobile .mobile_nav {
   display: flex;
   flex-direction: column;
+  width: 50%;
   opacity: 0;
   gap: 1vh;
   width: 100%;
@@ -268,53 +322,19 @@ body {
   height: 100%;
   overflow: hidden;
 }
-.new-releases .see_more {
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  justify-content: right;
-  align-items: center;
-  z-index: 1;
+
+html {
+  scroll-behavior: smooth;
 }
-.new-releases .see_more .button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #ffffff;
-  margin: 1vh 0;
-  padding: 0 1vh;
-  width: 10vh;
-  height: 4vh;
-  background-color: #4d4d4d;
+
+body::-webkit-scrollbar {
+  width: 5px;
+  background-color: #282c34;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(33, 161, 241, 0.3882352941);
   border-radius: 8px;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transition: background-position 0.3s;
-}
-.new-releases .see_more .button:hover {
-  background-position: 0 100%;
-}
-.new-releases .see_more .button:after {
-  content: "";
-  position: absolute;
-  top: -10px;
-  left: 0;
-  width: 150%;
-  height: 200%;
-  background: linear-gradient(to bottom, #21a1f1 50%, #21a1f1 50%);
-  transition: transform 0.3s;
-  transform-origin: top left;
-  transform: translateY(-100%);
-  rotate: 20deg;
-}
-.new-releases .see_more .button:hover:after {
-  width: 100%;
-  transform: translateX(-50%);
-  rotate: 40deg;
-}
-.new-releases .see_more .button h5 {
-  z-index: 2;
 }
 
 @media (max-width: 1024px) {
