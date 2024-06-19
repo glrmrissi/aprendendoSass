@@ -34,6 +34,9 @@
         width: 100%;
         height: 100%;
         z-index: 11;
+        &:hover {
+          scale: 1.1;
+        }
       }
       .menu_mobile {
         position: fixed;
@@ -121,6 +124,11 @@
       justify-content: center;
       align-items: center;
       height: $height-cover;
+      transition: 0.1s ease-in-out;
+      &:hover {
+        filter: brightness(0.8);
+        scale: 1.1;
+      }
       img {
         width: 30px;
         height: 30px;

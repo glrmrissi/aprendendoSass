@@ -56,6 +56,9 @@ body {
   height: 100%;
   z-index: 11;
 }
+.header_container .navbar .nav-hamburguer img:hover {
+  scale: 1.1;
+}
 .header_container .navbar .nav-hamburguer .menu_mobile {
   position: fixed;
   padding: 10vh 1vh;
@@ -145,6 +148,11 @@ body {
   justify-content: center;
   align-items: center;
   height: 100%;
+  transition: 0.1s ease-in-out;
+}
+.header_container .profile_icon .circle_profile:hover {
+  filter: brightness(0.8);
+  scale: 1.1;
 }
 .header_container .profile_icon .circle_profile img {
   width: 30px;
@@ -182,6 +190,7 @@ body {
   flex-direction: column;
   justify-content: center;
   width: 100%;
+  height: 200px;
   background-color: #797b7c;
   align-items: center;
   overflow: hidden;
@@ -233,12 +242,15 @@ body {
   width: 30px;
 }
 .new-releases .catalog .card-horizontal .img_movie .overlay .description_anime_img {
+  display: grid;
+  grid-template-columns: repeat(1, 3fr);
   padding: 20px;
   width: 100%;
   height: 100%;
 }
 .new-releases .catalog .card-horizontal .img_movie .overlay .description_anime_img .description {
   color: #ffffff;
+  font-size: 1em;
   width: 100%;
   height: 100%;
   display: flex;
@@ -252,7 +264,6 @@ body {
   flex-direction: column;
   padding: 10px;
   font-weight: 500;
-  font-size: 1em;
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -296,6 +307,18 @@ body {
   .new-releases .catalog {
     padding: 0;
     grid-template-columns: repeat(2, 1fr);
+  }
+  .new-releases .catalog .card-horizontal {
+    height: auto;
+  }
+  .new-releases .catalog .card-horizontal .img_movie .overlay {
+    padding: 2px;
+  }
+}
+@media (max-width: 450px) {
+  .new-releases .catalog {
+    padding: 0;
+    grid-template-columns: repeat(1, 1fr);
   }
   .new-releases .catalog .card-horizontal {
     height: auto;

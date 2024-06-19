@@ -1,0 +1,16 @@
+@include breakpoint(small, "max") {
+    .new-releases {
+        .catalog {
+            padding: 0;
+            grid-template-columns: repeat(1, 1fr);
+            .card-horizontal {
+                height: auto;
+                .img_movie {
+                    .overlay {
+                        padding: 2px;
+                    }
+                }
+            }
+        }
+    }
+}
