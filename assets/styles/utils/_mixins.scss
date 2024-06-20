@@ -1,3 +1,25 @@
 .no-scroll {
     overflow: hidden;
 }
+
+@mixin items-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin gradientOfTheTitle {
+  background: linear-gradient(45deg, #61dafb, #21a1f1, #a1e4ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+@mixin gradientOfTheTitleHover {
+  background: linear-gradient(45deg, #ffffff,#93d6ff,#5edbfd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}

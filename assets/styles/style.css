@@ -241,12 +241,12 @@ body {
 }
 .new-releases .catalog .card-horizontal {
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  flex-direction: column;
   width: 100%;
   height: 250px;
   background-color: #797b7c;
-  align-items: center;
   overflow: hidden;
   border-radius: 8px;
   cursor: pointer;
@@ -309,31 +309,47 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: start;
   align-items: flex-start;
   z-index: 1;
+}
+.new-releases .catalog .card-horizontal .img_movie .overlay .description_anime_img .description h1 {
+  background: linear-gradient(45deg, #61dafb, #21a1f1, #a1e4ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 10px;
+}
+.new-releases .catalog .card-horizontal .img_movie .overlay .description_anime_img .description h1:hover {
+  background: linear-gradient(45deg, #ffffff, #93d6ff, #5edbfd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 .new-releases .catalog .card-horizontal .img_movie .overlay .description_anime_img .description .infos {
   display: flex;
   flex-direction: column;
   padding: 10px;
+  margin-bottom: 10px;
   font-weight: 500;
   width: 100%;
-  height: 100%;
-  overflow: hidden;
+  max-height: 150px;
+  overflow: auto;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-body::-webkit-scrollbar {
-  width: 5px;
+*::-webkit-scrollbar {
+  width: 3px;
   background-color: #282c34;
 }
 
-body::-webkit-scrollbar-thumb {
-  background-color: rgba(33, 161, 241, 0.3882352941);
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #61dafb, #21a1f1, #a1e4ff);
   border-radius: 8px;
 }
 
@@ -376,7 +392,7 @@ body::-webkit-scrollbar-thumb {
     padding: 2px;
   }
 }
-@media (max-width: 450px) {
+@media (max-width: 500px) {
   .new-releases .catalog {
     padding: 0;
     grid-template-columns: repeat(1, 1fr);

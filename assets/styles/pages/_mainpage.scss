@@ -19,13 +19,11 @@
     padding: 20px;
     width: 100%;
     .card-horizontal {
-      display: flex;
+      @include items-center;
       flex-direction: column;
-      justify-content: center;
       width: 100%;
       height: 250px;
       background-color: #797b7c;
-      align-items: center;
       overflow: hidden;
       border-radius: 8px;
       cursor: pointer;
@@ -82,17 +80,25 @@
               height: 100%;
               display: flex;
               flex-direction: column;
-              justify-content: end;
+              justify-content: start;
               align-items: flex-start;
               z-index: 1;
+              h1 { 
+                @include gradientOfTheTitle;
+                margin-bottom: 10px;
+                &:hover {
+                  @include gradientOfTheTitleHover;
+                }
+              }
               .infos {
                 display: flex;
                 flex-direction: column;
                 padding: 10px;
+                margin-bottom: 10px;
                 font-weight: 500;
                 width: 100%;
-                height: 100%;
-                overflow: hidden;
+                max-height: 150px;
+                overflow: auto;
               }
             }
           }
