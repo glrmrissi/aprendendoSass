@@ -6,12 +6,10 @@
     align-items: center;
     z-index: 1;
     .button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include  items-center;
       color: $font-color-main;
       margin: 1vh 0;
-      padding: 0 1vh;
+      padding: 0;
       width: 10vh;
       height: 4vh;
       background-color: $button-color;
@@ -47,6 +45,12 @@
         rotate: 40deg;
       }
       h5 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        font-size: 0.9em;
         z-index: 2;
       }
     }

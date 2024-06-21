@@ -25,11 +25,11 @@ body {
 }
 .see_more .button {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   color: #ffffff;
   margin: 1vh 0;
-  padding: 0 1vh;
+  padding: 0;
   width: 10vh;
   height: 4vh;
   background-color: #4d4d4d;
@@ -61,6 +61,12 @@ body {
   rotate: 40deg;
 }
 .see_more .button h5 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 0.9em;
   z-index: 2;
 }
 
@@ -215,6 +221,65 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 100%;
+}
+
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+  height: 50vh;
+}
+.slider .grid_slide {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 45vh;
+}
+.slider .grid_slide .container_slider {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 16.6666666667%;
+  background-color: rgb(103, 146, 132);
+  transition: all 0.3s;
+  z-index: 1;
+  height: 100%;
+}
+.slider .grid_slide .container_slider:hover {
+  width: 60vh;
+  transition: all 0.3s;
+  z-index: 2;
+}
+.slider .grid_slide .container_slider:hover .overlay {
+  opacity: 1;
+  transform: translateY(0%);
+}
+.slider .grid_slide .container_slider .overlay {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3215686275);
+  box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.1647058824);
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: opacity 0.4s, transform 0.1s;
+  z-index: 1;
+}
+.slider .grid_slide .container_slider img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .container {
@@ -373,6 +438,9 @@ html {
   .new-releases .catalog .card-horizontal .img_movie .overlay .description_anime_img .description {
     padding: 0px;
   }
+  .see_more .button h5 {
+    font-size: 0.8em;
+  }
 }
 @media (max-width: 768px) {
   .header_container .logo_icon {
@@ -391,6 +459,9 @@ html {
   .new-releases .catalog .card-horizontal .img_movie .overlay {
     padding: 2px;
   }
+  .see_more .button h5 {
+    font-size: 0.7em;
+  }
 }
 @media (max-width: 500px) {
   .new-releases .catalog {
@@ -402,5 +473,8 @@ html {
   }
   .new-releases .catalog .card-horizontal .img_movie .overlay {
     padding: 2px;
+  }
+  .see_more .button h5 {
+    font-size: 0.7em;
   }
 }/*# sourceMappingURL=style.css.map */
