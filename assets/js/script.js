@@ -37,3 +37,14 @@ function ocultar() {
 }
 
 window.addEventListener("scroll", ocultar)
+
+window.addEventListener("scroll", function() {
+    const parallaxElements = document.querySelectorAll(".grid_slide");
+    const scrollPosition = window.pageYOffset;
+  
+    parallaxElements.forEach((el) => {
+      const speed = el.getAttribute("data-speed");
+      const yPos = -(scrollPosition * speed / 100);
+      el.style.transform = `translateY(${yPos}px)`;
+    });
+  });

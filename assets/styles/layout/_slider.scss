@@ -5,12 +5,16 @@
     flex-direction: row;
     width: 100%;
     height: 50vh;
+    overflow: hidden;
+    transform: translateZ(0); 
     .grid_slide {
         display: flex;
         flex-direction: row;
         width: 100%;
         height: 45vh;
         overflow: hidden;
+        transform: translateZ(0);
+        will-change: transform;
         .container_slider {
             position: relative;
             display: flex;
