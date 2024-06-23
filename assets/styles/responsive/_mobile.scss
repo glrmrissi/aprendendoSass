@@ -1,0 +1,33 @@
+@include breakpoint(small, "max") {
+    .slider {
+        .grid_slide {
+            .container_slider {
+                width: calc(100% / 4);
+            }
+            .container_slider:nth-child(3) {
+                display: none;
+               }
+        }
+    }
+    .new-releases {
+        .catalog {
+            padding: 0;
+            grid-template-columns: repeat(1, 1fr);
+            .card-horizontal {
+                height: 250px;
+                .img_movie {
+                    .overlay {
+                        padding: 2px;
+                    }
+                }
+            }
+        }
+    }
+    .see_more {
+        .button {
+            h5 {
+                font-size: 0.7em;
+            }
+        }
+    }
+}

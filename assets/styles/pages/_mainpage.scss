@@ -1,0 +1,147 @@
+.container {
+  width: $width-cover;
+  height: 100%;
+  background-color: $background-primary;
+}
+
+.new-releases {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  padding: 10vh;
+  background-color: $background-primary;
+  z-index: 1;
+  .catalog {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    padding: 20px;
+    width: 100%;
+    .card-horizontal {
+      @include items-center;
+      flex-direction: column;
+      width: 100%;
+      height: 250px;
+      background-color: #797b7c;
+      overflow: hidden;
+      border-radius: 8px;
+      cursor: pointer;
+      .img_movie {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        object-fit: cover;
+        &:hover .overlay {
+          opacity: 1;
+          clip-path: circle(100% at 50% 50%);
+        }
+        .anime_movie {
+          border-radius: 8px;
+          width: 100%;
+          object-fit: cover;
+        }
+        .overlay {
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          padding: 10px;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: #00000052;
+          box-shadow: inset 10px 10px 10px #0000002a;
+          opacity: 0;
+          clip-path: circle(0% at 50% 50%);
+          transition: opacity 0.5s, clip-path 0.5s;
+          border-radius: 8px;
+          z-index: 1;
+          .logo_anime_img {
+            width: 100%;
+            height: 15px;
+            img {
+              width: 30px;
+            }
+          }
+          .description_anime_img {
+            display: grid;
+            grid-template-columns: repeat(1, 3fr);
+            padding: 20px;
+            width: 100%;
+            height: 100%;
+            .description {
+              color: $font-color-main;
+              font-size: 1em;
+              width: 100%;
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              justify-content: start;
+              align-items: flex-start;
+              z-index: 1;
+              h1 { 
+                @include gradientOfTheTitle;
+                margin-bottom: 10px;
+                &:hover {
+                  @include gradientOfTheTitleHover;
+                }
+              }
+              .infos {
+                display: flex;
+                flex-direction: column;
+                padding: 10px;
+                margin-bottom: 10px;
+                font-weight: 500;
+                width: 100%;
+                max-height: 150px;
+                overflow: auto;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#btnTop {
+  display: flex;
+  position: fixed;
+  right: 30px;
+  bottom: 40px;
+  width: 30px;
+  height: 30px;
+  background-color: #27272734;
+  border-radius: 50%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  z-index: 11;
+  &:hover {
+    background-color: #2727279c;
+    transform: rotate(720deg);
+  }
+  .arrow {
+    border: solid #FFF;
+    border-width: 0px 4px 4px 0;
+    border-radius: 1px;
+    padding: 3px;
+    align-items: center;
+    display: inline-block; 
+    transition: .3s ease-in-out;
+  }
+  .up {
+    transform: rotate(-135deg);
+  }
+}
+

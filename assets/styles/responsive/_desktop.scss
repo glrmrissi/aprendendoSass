@@ -1,0 +1,32 @@
+@include breakpoint(large, "max") {
+    .new-releases {
+        padding: 1vh;
+        .catalog {
+            padding: 0vh;
+            grid-template-columns: repeat(2, 1fr);
+            .card-horizontal {
+                height: 250px;
+                .img_movie {
+                    .overlay {
+                        padding: 0vh;
+                        .logo_anime_img {
+                            display: none;
+                        }
+                        .description_anime_img  {
+                            .description {
+                                padding: 0px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .see_more {
+        .button {
+            h5 {
+                font-size: 0.8em;
+            }
+        }
+    }
+}

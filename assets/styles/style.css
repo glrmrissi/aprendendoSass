@@ -1,0 +1,538 @@
+.no-scroll {
+  overflow: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.see_more {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+  z-index: 1;
+}
+.see_more .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  margin: 1vh 0;
+  padding: 0;
+  width: 10vh;
+  height: 4vh;
+  background-color: #4d4d4d;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: background-position 0.3s;
+}
+.see_more .button:hover {
+  background-position: 0 100%;
+}
+.see_more .button:after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 150%;
+  height: 200%;
+  background: linear-gradient(to bottom, #21a1f1 50%, #21a1f1 50%);
+  transition: transform 0.3s;
+  transform-origin: top left;
+  transform: translateY(-100%);
+  rotate: 20deg;
+}
+.see_more .button:hover:after {
+  width: 100%;
+  transform: translateX(-50%);
+  rotate: 40deg;
+}
+.see_more .button h5 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 0.9em;
+  z-index: 2;
+}
+
+.header_container {
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 7vh;
+  background-color: #20232a;
+  z-index: 10;
+}
+.header_container .logo_icon {
+  display: flex;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  height: 100%;
+}
+.header_container .navbar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.header_container .navbar .nav-hamburguer {
+  display: none;
+  height: 100%;
+}
+@media (max-width: 768px) {
+  .header_container .navbar .nav-hamburguer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.header_container .navbar .nav-hamburguer img {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  padding: 7px;
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+}
+.header_container .navbar .nav-hamburguer img:hover {
+  scale: 1.1;
+}
+.header_container .navbar .nav-hamburguer .menu_mobile {
+  position: fixed;
+  padding: 10vh 1vh;
+  top: 0;
+  left: 0px;
+  width: 50%;
+  height: 100%;
+  background-color: #20232a;
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transform: translateX(-100%);
+  z-index: 10;
+}
+.header_container .navbar .nav-hamburguer .menu_mobile.active {
+  opacity: 1 !important;
+  visibility: visible;
+  transform: translateX(0%);
+}
+.header_container .navbar .nav-hamburguer .menu_mobile .mobile_nav {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  opacity: 0;
+  gap: 1vh;
+  width: 100%;
+  height: auto;
+}
+.header_container .navbar .nav-hamburguer .menu_mobile .mobile_nav.active {
+  opacity: 1 !important;
+  visibility: visible;
+}
+.header_container .navbar .nav-hamburguer .menu_mobile .mobile_nav .nav_link {
+  display: flex;
+  opacity: 1;
+  flex-direction: column;
+  background-color: #4d4d4d;
+  width: 100%;
+  border-radius: 8px;
+  transition: 0.3s ease-in-out;
+}
+.header_container .navbar .nav-hamburguer .menu_mobile .mobile_nav .nav_link:hover {
+  background-color: #21a1f1;
+}
+.header_container .navbar .nav-hamburguer .menu_mobile .mobile_nav .nav_link a {
+  color: #ffffff;
+  padding: 1vh;
+  width: 100%;
+  height: 100%;
+}
+.header_container .navbar .list_nav {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  flex-wrap: wrap;
+}
+@media (max-width: 768px) {
+  .header_container .navbar .list_nav {
+    display: none;
+  }
+}
+.header_container .navbar .list_nav .nav_link {
+  margin: 0 20px 0 20px;
+  display: flex;
+  justify-content: space-around;
+}
+.header_container .navbar .list_nav .nav_link a {
+  text-decoration: none;
+  color: #ffffff;
+  transition: 0.3s;
+}
+.header_container .navbar .list_nav .nav_link a:hover {
+  color: #65ceff;
+}
+.header_container .profile_icon {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin: 0 1vh 0 30%;
+}
+.header_container .profile_icon .circle_profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  transition: 0.1s ease-in-out;
+}
+.header_container .profile_icon .circle_profile:hover {
+  filter: brightness(0.8);
+  scale: 1.1;
+}
+.header_container .profile_icon .circle_profile img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 100%;
+}
+
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+  transform: translateZ(0);
+}
+.slider .grid_slide {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 45vh;
+  overflow: hidden;
+  transform: translateZ(0);
+  will-change: transform;
+}
+.slider .grid_slide .container_slider {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 16.6666666667%;
+  background-color: rgb(103, 146, 132);
+  transition: all 0.3s;
+  z-index: 1;
+  height: 100%;
+}
+.slider .grid_slide .container_slider:hover {
+  width: 55vh;
+  transition: all 0.3s;
+  z-index: 2;
+}
+.slider .grid_slide .container_slider:hover .overlay {
+  opacity: 1;
+  transform: translateY(0%);
+}
+.slider .grid_slide .container_slider .overlay {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3215686275);
+  box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.1647058824);
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: opacity 0.4s, transform 0.1s;
+  z-index: 1;
+}
+.slider .grid_slide .container_slider img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: #282c34;
+}
+
+.new-releases {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  padding: 10vh;
+  background-color: #282c34;
+  z-index: 1;
+}
+.new-releases .catalog {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  padding: 20px;
+  width: 100%;
+}
+.new-releases .catalog .card-horizontal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 250px;
+  background-color: #797b7c;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.new-releases .catalog .card-horizontal .img_movie {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+.new-releases .catalog .card-horizontal .img_movie:hover .overlay {
+  opacity: 1;
+  -webkit-clip-path: circle(100% at 50% 50%);
+          clip-path: circle(100% at 50% 50%);
+}
+.new-releases .catalog .card-horizontal .img_movie .anime_movie {
+  border-radius: 8px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.new-releases .catalog .card-horizontal .img_movie .overlay {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3215686275);
+  box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.1647058824);
+  opacity: 0;
+  -webkit-clip-path: circle(0% at 50% 50%);
+          clip-path: circle(0% at 50% 50%);
+  transition: opacity 0.5s, -webkit-clip-path 0.5s;
+  transition: opacity 0.5s, clip-path 0.5s;
+  transition: opacity 0.5s, clip-path 0.5s, -webkit-clip-path 0.5s;
+  border-radius: 8px;
+  z-index: 1;
+}
+.new-releases .catalog .card-horizontal .img_movie .overlay .logo_anime_img {
+  width: 100%;
+  height: 15px;
+}
+.new-releases .catalog .card-horizontal .img_movie .overlay .logo_anime_img img {
+  width: 30px;
+}
+.new-releases .catalog .card-horizontal .img_movie .overlay .description_anime_img {
+  display: grid;
+  grid-template-columns: repeat(1, 3fr);
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+}
+.new-releases .catalog .card-horizontal .img_movie .overlay .description_anime_img .description {
+  color: #ffffff;
+  font-size: 1em;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
+  z-index: 1;
+}
+.new-releases .catalog .card-horizontal .img_movie .overlay .description_anime_img .description h1 {
+  background: linear-gradient(45deg, #61dafb, #21a1f1, #a1e4ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 10px;
+}
+.new-releases .catalog .card-horizontal .img_movie .overlay .description_anime_img .description h1:hover {
+  background: linear-gradient(45deg, #ffffff, #93d6ff, #5edbfd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+.new-releases .catalog .card-horizontal .img_movie .overlay .description_anime_img .description .infos {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  width: 100%;
+  max-height: 150px;
+  overflow: auto;
+}
+
+#btnTop {
+  display: flex;
+  position: fixed;
+  right: 30px;
+  bottom: 40px;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(39, 39, 39, 0.2039215686);
+  border-radius: 50%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  z-index: 11;
+}
+#btnTop:hover {
+  background-color: rgba(39, 39, 39, 0.6117647059);
+  transform: rotate(720deg);
+}
+#btnTop .arrow {
+  border: solid #FFF;
+  border-width: 0px 4px 4px 0;
+  border-radius: 1px;
+  padding: 3px;
+  align-items: center;
+  display: inline-block;
+  transition: 0.3s ease-in-out;
+}
+#btnTop .up {
+  transform: rotate(-135deg);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+*::-webkit-scrollbar {
+  width: 3px;
+  background-color: #282c34;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #61dafb, #21a1f1, #a1e4ff);
+  border-radius: 8px;
+}
+
+@media (max-width: 1024px) {
+  .new-releases {
+    padding: 1vh;
+  }
+  .new-releases .catalog {
+    padding: 0vh;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .new-releases .catalog .card-horizontal {
+    height: 250px;
+  }
+  .new-releases .catalog .card-horizontal .img_movie .overlay {
+    padding: 0vh;
+  }
+  .new-releases .catalog .card-horizontal .img_movie .overlay .logo_anime_img {
+    display: none;
+  }
+  .new-releases .catalog .card-horizontal .img_movie .overlay .description_anime_img .description {
+    padding: 0px;
+  }
+  .see_more .button h5 {
+    font-size: 0.8em;
+  }
+}
+@media (max-width: 768px) {
+  .header_container .logo_icon {
+    display: none;
+  }
+  .slider .grid_slide .container_slider {
+    width: 20%;
+  }
+  .slider .grid_slide .container_slider:nth-child(2) {
+    display: none;
+  }
+  .new-releases {
+    padding: 2vh;
+  }
+  .new-releases .catalog {
+    padding: 0;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .new-releases .catalog .card-horizontal {
+    height: 250px;
+  }
+  .new-releases .catalog .card-horizontal .img_movie .overlay {
+    padding: 2px;
+  }
+  .see_more .button h5 {
+    font-size: 0.7em;
+  }
+}
+@media (max-width: 500px) {
+  .slider .grid_slide .container_slider {
+    width: 25%;
+  }
+  .slider .grid_slide .container_slider:nth-child(3) {
+    display: none;
+  }
+  .new-releases .catalog {
+    padding: 0;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .new-releases .catalog .card-horizontal {
+    height: 250px;
+  }
+  .new-releases .catalog .card-horizontal .img_movie .overlay {
+    padding: 2px;
+  }
+  .see_more .button h5 {
+    font-size: 0.7em;
+  }
+}/*# sourceMappingURL=style.css.map */
