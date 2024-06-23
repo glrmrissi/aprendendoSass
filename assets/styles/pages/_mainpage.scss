@@ -107,3 +107,38 @@
     }
   }
 }
+
+#btnTop {
+  display: flex;
+  position: fixed;
+  right: 30px;
+  bottom: 40px;
+  width: 30px;
+  height: 30px;
+  background-color: #27272734;
+  border-radius: 50%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  z-index: 11;
+  &:hover {
+    background-color: #2727279c;
+    transform: rotate(720deg);
+  }
+  .arrow {
+    border: solid #FFF;
+    border-width: 0px 4px 4px 0;
+    border-radius: 1px;
+    padding: 3px;
+    align-items: center;
+    display: inline-block; 
+    transition: .3s ease-in-out;
+  }
+  .up {
+    transform: rotate(-135deg);
+  }
+}
+

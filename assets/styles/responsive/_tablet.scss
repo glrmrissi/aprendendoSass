@@ -4,6 +4,16 @@
             display: none;
         }
     }
+    .slider {
+        .grid_slide {
+            .container_slider {
+                width: calc(100% / 5);
+            }
+            .container_slider:nth-child(2) {
+                display: none;
+               }
+        }
+    }
     .new-releases {
         padding: 2vh;
         .catalog {

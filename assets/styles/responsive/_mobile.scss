@@ -1,4 +1,14 @@
 @include breakpoint(small, "max") {
+    .slider {
+        .grid_slide {
+            .container_slider {
+                width: calc(100% / 4);
+            }
+            .container_slider:nth-child(3) {
+                display: none;
+               }
+        }
+    }
     .new-releases {
         .catalog {
             padding: 0;

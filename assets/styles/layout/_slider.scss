@@ -10,6 +10,7 @@
         flex-direction: row;
         width: 100%;
         height: 45vh;
+        overflow: hidden;
         .container_slider {
             position: relative;
             display: flex;
@@ -21,7 +22,7 @@
             z-index: 1;
             height: 100%;
             &:hover {
-                width: 60vh;
+                width: 55vh;
                 transition: all .3s;
                 z-index: 2;
             }
