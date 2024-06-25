@@ -40,7 +40,7 @@
         object-fit: cover;
         &:hover .overlay {
           opacity: 1;
-          clip-path: circle(100% at 50% 50%);
+          clip-path: circle(150% at 0% 10%);
         }
         .anime_movie {
           border-radius: 8px;
@@ -57,7 +57,7 @@
           width: 100%;
           height: 100%;
           background-color: #00000052;
-          box-shadow: inset 10px 10px 10px #0000002a;
+          box-shadow: inset 10px 10px 10px #00000002;
           opacity: 0;
           clip-path: circle(0% at 50% 50%);
           transition: opacity 0.5s, clip-path 0.5s;

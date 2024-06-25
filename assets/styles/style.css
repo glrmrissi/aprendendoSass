@@ -336,8 +336,8 @@ body {
 }
 .new-releases .catalog .card-horizontal .img_movie:hover .overlay {
   opacity: 1;
-  -webkit-clip-path: circle(100% at 50% 50%);
-          clip-path: circle(100% at 50% 50%);
+  -webkit-clip-path: circle(150% at 0% 10%);
+          clip-path: circle(150% at 0% 10%);
 }
 .new-releases .catalog .card-horizontal .img_movie .anime_movie {
   border-radius: 8px;
@@ -355,7 +355,7 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.3215686275);
-  box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.1647058824);
+  box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.0078431373);
   opacity: 0;
   -webkit-clip-path: circle(0% at 50% 50%);
           clip-path: circle(0% at 50% 50%);
