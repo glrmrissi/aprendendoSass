@@ -38,16 +38,6 @@ function ocultar() {
 
 window.addEventListener("scroll", ocultar)
 
-window.addEventListener("scroll", function() {
-    const parallaxElements = document.querySelectorAll(".grid_slide");
-    const scrollPosition = window.pageYOffset;
-  
-    parallaxElements.forEach((el) => {
-      const speed = el.getAttribute("data-speed");
-      const yPos = -(scrollPosition * speed / 100);
-      el.style.transform = `translateY(${yPos}px)`;
-    });
-  });
 
 const cardImg = document.getElementById('cardImgAceleration');
 const urlsOfCard = ["assets/imgsAclr/img-2.webp", "assets/imgsAclr/img-3.jpg", "assets/imgsAclr/img-4.jpg","assets/imgsAclr/img-5.jpg", "assets/imgsAclr/img-1.jpg"];

@@ -1,7 +1,9 @@
 .container {
   width: $width-cover;
   height: 100%;
-  background-color: $background-primary;
+  background-image: radial-gradient(#545454 1px, transparent 1px);
+  background-size: 27px 27px;
+  background-color: #000000;
 }
 
 .new-releases {
@@ -12,7 +14,9 @@
   height: 100%;
   flex-direction: column;
   padding: 10vh;
-  background-color: $background-primary;
+  background-image: radial-gradient(#545454 1px, transparent 1px);
+  background-size: 27px 27px;
+  background-color: #000000;
   z-index: 1;
   .catalog {
     display: grid;
@@ -86,7 +90,7 @@
               justify-content: start;
               align-items: flex-start;
               z-index: 1;
-              h1 { 
+              h1 {
                 @include gradientOfTheTitle;
                 margin-bottom: 10px;
                 &:hover {
@@ -131,4 +135,3 @@
     transform: rotate(360deg);
   }
 }
-
