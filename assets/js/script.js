@@ -48,3 +48,28 @@ window.addEventListener("scroll", function() {
       el.style.transform = `translateY(${yPos}px)`;
     });
   });
+
+const cardImg = document.getElementById('cardImgAceleration');
+const urlsOfCard = ["assets/imgsAclr/img-2.webp", "assets/imgsAclr/img-3.jpg", "assets/imgsAclr/img-4.jpg","assets/imgsAclr/img-5.jpg", "assets/imgsAclr/img-1.jpg"];
+let timeoutId;
+let aceleration = 0.7; // Aceleração aplicada a cada IntervalTime 🎪
+let intervalTime = 400; // Tempo inicial de intervalo 🦺
+
+cardImg.addEventListener("mouseenter", () => {
+    let i = 0;
+
+    const changeImage = () => {
+        cardImg.src = urlsOfCard[i];
+        i = (i + 1) % urlsOfCard.length;
+        
+        intervalTime = Math.max(100, intervalTime * aceleration); // Aceleração com tempo mínimo de 100ms 🥾
+        timeoutId = setTimeout(changeImage, intervalTime); // Aplica um setTimeout para não bugar como o setInterval 🦸‍♀️
+    };
+
+    changeImage();
+});
+
+cardImg.addEventListener("mouseleave", () => {  // Não tem oque colocar aqui, se você é programador vai saber oque isso está fazendo ༼ つ ◕_◕ ༽つ
+    clearTimeout(timeoutId);
+    intervalTime = 400;
+});
